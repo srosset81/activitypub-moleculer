@@ -1,0 +1,15 @@
+{
+  "name": "@semapps/activitypub",
+  "version": "1.0.0",
+  "license": "Apache2",
+  "scripts": {
+    "start": "moleculer-runner services",
+    "dev": "moleculer-runner --repl --hot services"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonld": "^1.8.1",
+    "moleculer": "^0.13.11",
+    "moleculer-repl": "^0.6.1"
+  }
+}
