@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "license": "Apache2",
   "scripts": {
-    "start": "moleculer-runner services",
-    "dev": "moleculer-runner --repl --hot services"
+    "start": "moleculer-runner --envfile=.env services",
+    "dev": "moleculer-runner --envfile=.env --repl --hot services"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonld": "^1.8.1",
     "moleculer": "^0.13.11",
-    "moleculer-repl": "^0.6.1"
+    "moleculer-repl": "^0.6.1",
+    "node-fetch": "^2.6.0",
+    "uuid": "^3.3.3"
   }
 }

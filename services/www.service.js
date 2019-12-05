@@ -6,8 +6,7 @@ module.exports = {
     name: "www",
 
     settings: {
-        port: process.env.PORT || 3000,
-        pageSize: 5
+        port: process.env.PORT || 3000
     },
 
     created() {
@@ -16,8 +15,13 @@ module.exports = {
     },
 
     started() {
-        this.app.post('/', async (req, res) => {
-            await this.broker.call('asParser.parse', { jsonld: req.body })
+        this.app.post('/outbox', async (req, res) => {
+            await this.broker.call('outbox.post', { jsonld: req.body })
+                .then(result => res.json(result));
+        });
+
+        this.app.get('/outbox', async (req, res) => {
+            await this.broker.call('outbox.list')
                 .then(result => res.send(result));
         });
 

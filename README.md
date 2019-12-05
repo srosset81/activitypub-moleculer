@@ -1,8 +1,12 @@
 ## ActivityPub Moleculer Test
 
-1. Run `yarn start` or `yarn run dev` 
+1. Launch Jena and create a 'activities' dataset
 
-2. With Postman or Insomnia, POST to `https://localhost:3000` some JSON like this:
+2. Update the `SPARQL_ENDPOINT` variables in the `.env` file if necessary.
+
+3. Run `yarn start` or `yarn run dev` 
+
+4. With Postman or Insomnia, POST to `https://localhost:3000/outbox` some JSON like this:
 
 ```
 {
@@ -15,3 +19,5 @@
 ```
 
 You should get a response with a `Create` activity.
+
+5. Get the list of created activities by doing a GET to `https://localhost:3000/outbox`
