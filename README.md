@@ -6,7 +6,7 @@
 
 3. Run `yarn start` or `yarn run dev` 
 
-4. With Postman or Insomnia, POST to `https://localhost:3000/outbox` some JSON like this:
+4. With Postman or Insomnia, POST to `http://localhost:3000/outbox` some JSON like this:
 
 ```
 {
@@ -20,4 +20,4 @@
 
 You should get a response with a `Create` activity.
 
-5. Get the list of created activities by doing a GET to `https://localhost:3000/outbox`
+5. Get the list of created activities by doing a GET to `http://localhost:3000/outbox`
