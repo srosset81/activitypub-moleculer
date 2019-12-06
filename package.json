@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "Apache2",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "prettier": "prettier --single-quote --print-width 120 --write --ignore-path .gitignore '**/*.js'"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -13,6 +14,7 @@
     "moleculer-web": "^0.8.5",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.1",
+    "prettier": "^1.19.1",
     "sparqljson-parse": "^1.5.1",
     "uuid": "^3.3.3"
   }
