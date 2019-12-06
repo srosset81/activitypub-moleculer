@@ -4,7 +4,7 @@
 
 2. Update the `SPARQL_ENDPOINT` variables in the `.env` file if necessary.
 
-3. Run `yarn start` or `yarn run dev` 
+3. Run `yarn start`
 
 4. With Postman or Insomnia, POST to `https://localhost:3000/outbox` some JSON like this:
 

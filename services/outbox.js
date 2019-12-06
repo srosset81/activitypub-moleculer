@@ -10,9 +10,15 @@ module.exports = {
         homeUrl: process.env.HOME_URL || 'http://localhost:3000/',
         sparqlEndpoint: process.env.SPARQL_ENDPOINT
     },
+    routes: {
+        aliases: {
+            "POST outbox": "outbox.post",
+            "GET outbox": "outbox.list"
+        }
+    },
     actions: {
         async post({ params }) {
-            let activity = params.jsonld;
+            let activity = params;
 
             if( activity.type !== 'Create' ) {
                 activity = {
@@ -83,7 +89,7 @@ module.exports = {
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                     'Authorization': 'Basic ' + Buffer.from('admin:admin').toString('base64')
                 }
-            }).then(result => result.text());
+            }).then(result => result.json());
         }
     }
 };
